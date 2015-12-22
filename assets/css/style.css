@@ -1,0 +1,223 @@
+/*------------------------------------------------------------------------------*\
+	> MyShopCMS - Style.css 
+	> by Axel Mainguy
+\*------------------------------------------------------------------------------*/
+
+/* 
+	- Sommaire -
+	
+	1- Fonts
+	2- Header & Navigation
+	3- Body & Content
+	4- Sidebar & Widgets
+	5- Footer
+	6- Shop
+	7- Elements
+	8- Forms
+	
+*/
+
+/* 1 - Fonts */
+@font-face {
+	font-family: 'carbon';
+	src: url(../cms/assets/fonts/carbon bl.ttf);
+}
+@font-face {
+  font-family: 'Architects Daughter';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Architects Daughter'), local('ArchitectsDaughter'), url(https://fonts.gstatic.com/s/architectsdaughter/v6/RXTgOOQ9AAtaVOHxx0IUBM3t7GjCYufj5TXV5VnA2p8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* 2 - Header & Navigation */
+.header {
+	background-color: #1A2530;
+  	padding:8px;
+	text-align:center;
+}
+.header__logo a {
+	color: rgba(255,175,75,1);
+	color: -moz-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	color: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(255,146,10,1)));
+	color: -webkit-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	color: -o-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	color: -ms-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	color: linear-gradient(to right, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a', GradientType=1 );
+	font-family: 'Architects Daughter', cursive;
+	font-size: 45px;
+	padding:4px;
+	text-decoration:none;
+}
+.header-logo a:hover {
+
+}
+.navbar {
+	box-shadow: 1px 1px 8px #525252;
+	width:100%;
+}
+.navbar-inverse{
+	background-color: #34495E;
+}
+nav li:hover, nav li:active, nav li:focus {
+	background-color:rgba(0,0,0,0.5);
+}
+/* 3 - Body & Content */
+body {
+	background-color: #F7F7F7;
+}
+.main {
+	background-color:#EFEFEF;
+	box-shadow: 1px 1px 12px #525252;
+	margin:15px 0 15px 0;
+}
+.page__title {
+	border: 2px dashed #DF4949;
+	color:#DF4949;
+	font-family: 'Architects Daughter', cursive;
+	padding:5px;
+	text-align:center;
+}
+.page_title span {
+	vertical-align:middle;
+}
+/* 4 - Sidebar & Widgets */
+.sidebar {
+	margin:15px 0 15px 0;
+}
+.sidebar__widget, .sidebar__widget--shop, .sidebar__widget--parterns, .sidebar__widget--don {
+	background-color:#EFEFEF;
+	border-radius:20px 0;
+	box-shadow: 1px 1px 12px #525252;
+	margin:8px;
+	padding:8px;
+}
+.sidebar__widget-title {
+	background-color:#E27A3F;
+	border-radius:20px 0;
+	color:white;
+	font-family: 'Architects Daughter', cursive;
+	font-size:20px;
+	margin:0;
+	padding:8px;
+	text-align:center;
+}
+.sidebar__widget-content {
+	margin:5px;
+	padding:5px;
+	text-align:center;
+}
+.sidebar__widget--don .sidebar__widget-content {
+	text-align:center;
+}
+.img_profil {
+	border-radius:20px;
+}
+.social_img {
+	text-align:center;
+}
+.social_img img:hover {
+	opacity:0.7;
+}
+/* 5 - Footer */
+.footer {
+	background-color: #1A2530;
+	padding:30px;
+	text-align:center;
+}
+.footer__description {
+	color:white;
+	text-align:center;
+}
+.footer__link {
+	color:#34495E;
+}
+/* 6 - Shop */
+.shops__title {
+ 	color: #532E23;
+ 	font-size:x-large;
+ 	padding:10px;
+ 	text-transform:uppercase;
+}
+.shop_article {
+	background-color:#e9e5e2;
+	border-radius:5px;
+	box-shadow: 1px 1px 12px #525252;
+	font-family:'arial black';
+	font-size:12px;
+	font-weight:bold;
+	margin-bottom:15px;
+	min-height:200px;
+	max-height:200px;
+	margin-top:15px;
+	padding:20px;
+	text-align:center;
+}
+.shop_article:hover .shop_description {
+	background-color:#FFC150;
+	border-radius:80px;
+}
+.shop_article:hover .burger__transform {
+	transform: scale(1.5,1.5);
+}
+.shop_title {
+ 	color: #532E23;
+ 	font-size:20px;
+ 	text-transform:uppercase;
+}
+.shop_description {
+	bottom:0;
+	left:0;
+	line-height:150px;
+	opacity:0;
+	margin:0;
+	text-align:center;
+	top:0;
+	right:0;
+}
+/* 7 - Elements */
+hr {
+	border:1px;
+	margin: 4px;
+}
+#go-top {
+	background-color:#EFEFEF;
+	border-radius:10px;
+	color:black;
+	font-size:1.5em;
+	font-weight:800;
+	height:40px;
+	padding:4px;
+	text-decoration:none;
+}
+#go-top:hover {
+	opacity:0.7;
+	width:50px;
+}
+/* 8 - Forms */
+form {
+	padding:10px;
+}
+.form__description {
+	border: 2px dashed #DF4949;
+	font-style:italic;
+	font-weight:bold;
+	text-align:center;
+	padding:4px;
+}
+.form-control:focus {
+	border-color: #E27A3F;
+}
+.form__button {
+	background-color: #E27A3F;
+	border-radius:10px;
+	color:white;
+	float:right;
+	margin:8px;
+	padding:8px;
+	transition: all 0.5s ease-in-out;
+}
+.form__button:hover, .form__button:active, .form__button:focus{
+	background-color:#DF4949;
+	border-radius:10px;
+}
