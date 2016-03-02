@@ -1,0 +1,28 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule ^home$ index.php?c=admin&a=home [L]
+
+RewriteRule ^article/add$ index.php?c=article&a=add [L]
+RewriteRule ^article/list$ index.php?c=article&a=list [L]
+RewriteRule ^article/update/([a-zA-Z0-9\-]+)-([0-9]+)$ index.php?c=article&a=update&url=$1&id=$2 [L]
+RewriteRule ^article/delete/([a-zA-Z0-9\-]+)-([0-9]+)$ index.php?c=article&a=delete&url=$1&id=$2 [L]
+
+RewriteRule ^users/add$ index.php?c=users&a=add [L]
+RewriteRule ^users/list$ index.php?c=users&a=list [L]
+RewriteRule ^users/delete/([0-9]+)$ index.php?c=users&a=delete&id=$1 [L]
+
+RewriteRule ^news/add$ index.php?c=news&a=add [L]
+RewriteRule ^news/list$ index.php?c=news&a=list [L]
+RewriteRule ^news/update/([0-9]+)$ index.php?c=news&a=update&id=$1 [L]
+RewriteRule ^news/delete/([0-9]+)$ index.php?c=news&a=delete&id=$1 [L]
+
+RewriteRule ^categories/list$ index.php?c=categories&a=list [L]
+RewriteRule ^categories/add$ index.php?c=categories&a=add [L]
+RewriteRule ^categories/update/([0-9]+)$ index.php?c=categories&a=update&id=$1 [L]
+RewriteRule ^categories/delete/([0-9]+)$ index.php?c=categories&a=delete&id=$1 [L]
+
+RewriteRule ^articlecateg/delete/([0-9]+)-([0-9]+)$ index.php?c=articlecateg&a=delete&id_categories=$1&id_articles=$2 [L]
+
+RewriteRule ^deconnect$ index.php?c=admin&a=deconnexion [L]
+
+

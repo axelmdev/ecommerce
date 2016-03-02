@@ -1,6 +1,6 @@
 <?php 
 $title_page = "A propos";
-require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/header.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header.php");
 ?>
 		<div class="container">
 			<div class="row">
@@ -8,10 +8,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/header.php");
 					<div class="col-xs-12">
 						<h2 class="page__title">A propos :</h2>
 						<hr>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed atque libero alias esse nulla modi ex quibusdam est optio delectus maxime vitae, ipsam officia, consequatur debitis reprehenderit quas veniam! Quisquam.
+						<p>MyShopCMS crée en 2015 par Axel Mainguy, est un Système de vente Ecommerce.</p>
 					</div>
 				</div> <!-- .main -->
-	<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/sidebar.php"); ?>
+	<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/sidebar.php"); ?>
 			</div> <!-- .row (principale) -->
 		</div> <!-- .container (principale) -->
-	<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/footer.php"); ?>
+	<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/footer.php"); ?>

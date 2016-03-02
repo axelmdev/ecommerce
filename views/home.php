@@ -1,17 +1,17 @@
-<?php 
+<?php
 $title_page = "Accueil";
-require_once ($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/header.php") 
+require_once ($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header.php");
 ?>
 <br>
 <div class="container">
-	<div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-8">
+  <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
-              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
               </ol>
 
               <!-- Wrapper for slides -->
@@ -19,19 +19,19 @@ require_once ($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/header.php")
               <div class="item active">
                 <img src="assets/images/sliders/slide1.jpg" alt="slide1">
                 <div class="carousel-caption">
-                  Slide 1
+                  The Last of Us
                 </div>
               </div>
               <div class="item">
                 <img src="assets/images/sliders/slide2.jpg" alt="slide2">
                 <div class="carousel-caption">
-                  Slide 2
+                  GTA
                 </div>
               </div>
               <div class="item">
                 <img src="assets/images/sliders/slide3.jpg" alt="slide3">
                 <div class="carousel-caption">
-                  Slide 3
+                  Mirror's Edge
                 </div>
               </div>
             </div>
@@ -47,27 +47,30 @@ require_once ($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/header.php")
             </a>
           </div>
         </div>
-        <div class="col-xs-6 col-md-4">
-          
-        </div>
       </div>
     </div>
 <div class="container">
   <div class="row">
 		<div class="main col-xs-12 col-sm-12 col-md-8">
 			<div class="col-xs-12">
-				Bonjour, bienvenue sur mon site.
+        <?php if(empty($listeNews)) { ?>
+        <h2 class="news_title">Bienvenue sur MyshopCMS</h2>
         <hr>
-        <h2>- Titre de l'article -</h2>
+        <p class="news_content">Afin d'utiliser en toute simplicité le système ecommerce, vous devez vous inscrire <a href="/signin">ici</a></p>
         <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolorum excepturi molestias nisi natus numquam magni, suscipit aliquid quibusdam eligendi doloremque commodi repellendus, a eum, corporis atque. Autem, voluptatibus, adipisci?</p>
-			  <hr>
-        <h2>- Titre de l'article -</h2>
+        <small>Crée par admin</small>
+        <?php } ?>
+        <?php foreach ($listeNews as $news) { ?>
+        <h2 class="news_title"><a href="/ecommerce/news/view/<?= $news['id_news'];?>-<?= $news['url']; ?>"><?= $news['title']; ?></a></h2>
         <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolorum excepturi molestias nisi natus numquam magni, suscipit aliquid quibusdam eligendi doloremque commodi repellendus, a eum, corporis atque. Autem, voluptatibus, adipisci?</p>
+        <p class="news_content"><?= $news['content']; ?></p>
+        <hr>
+        <small>Crée par <?= $admListeNews['pseudo']; ?></small>
+        <?php } ?>
       </div>
 		</div> <!-- .main -->
-		<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/sidebar.php"); ?>
+		<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/sidebar.php"); ?>
 	</div> <!-- .row (principale) -->
 </div> <!-- .container (principale) -->
-<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/footer.php") ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/footer.php");
+?>

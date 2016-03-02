@@ -7,6 +7,94 @@ body {
 .page-header {
   text-align: center;
 }
+.login-box {
+  background: url('/ecommerce/assets/images/login_bg.jpg') no-repeat center fixed;
+  background-size: 100% 100%;
+}
+.panel-primary .panel-footer:hover {
+  border-color: #fff;
+  color: #fff;
+  background-color: #337ab7;
+}
+.panel-lightblue {
+  border-color:#58ACFA;
+}
+.panel-lightblue .panel-heading{
+  border-color: #58ACFA;
+  color: #fff;
+  background-color: #58ACFA;
+}
+.panel-lightblue .panel-footer:hover {
+  border-color: #fff;
+  color: #fff;
+  background-color: #58ACFA;
+}
+.panel-purple {
+  border-color: #9A2EFE;
+}
+.panel-purple .panel-heading {
+  border-color: #9A2EFE;
+  color:#fff;
+  background-color: #9A2EFE;
+}
+.panel-purple .panel-footer:hover {
+  border-color: #fff;
+  color: #fff;
+  background-color: #9A2EFE;
+}
+.panel-green {
+  border-color: #5cb85c;
+}
+.panel-green .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+.panel-green .panel-footer:hover {
+  border-color: #fff;
+  color: #fff;
+  background-color: #5cb85c;
+}
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+.panel-yellow .panel-heading {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+.panel-yellow .panel-footer:hover {
+  border-color: #fff;
+  color: #fff;
+  background-color: #f0ad4e;
+}
+.panel-red {
+    border-color: #d9534f;
+}
+.panel-red .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+.panel-red .panel-footer:hover {
+  border-color: #fff;
+  color: #fff;
+  background-color: #d9534f;
+}
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  margin-top: -135px;
+  margin-left: -125px;
+  padding: 30px;
+  background-color: #fff;
+}
+.login_title {
+  border: 1px solid gray;
+  text-align: center;
+}
 /*
  * Top navigation
  * Hide default border to remove 1px line.
@@ -14,6 +102,7 @@ body {
 .navbar-fixed-top {
   	border: 0;
 }
+
 #go-top {
   background-color:#EFEFEF;
   border-radius:10px;
@@ -27,4 +116,60 @@ body {
 #go-top:hover {
   opacity:0.7;
   width:50px;
+}
+.container {
+	padding-top: 50px;
+}
+.list-group-item {
+	text-align:center;
+}
+.list-group-item:hover {
+  background-color:#1A2530;
+  color:white;
+}
+.list-group-item a,.list-group-item a:active, .list-group-item a:visited {
+  color:black;
+  text-decoration:none;
+}
+.list-group-item a:hover {
+  color:white;
+}
+/*LOGIN CONFIGURATION PAGE*/
+.form-login {
+  max-width: 330px;
+  margin: 100px auto 0;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.form-login h2.form-login-heading {
+  margin: 0;
+  padding: 25px 20px;
+  text-align: center;
+  background: #68dff0;
+  border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.login-wrap {
+  padding: 20px;
+}
+.login-wrap .registration {
+  text-align: center;
+}
+.login-social-link {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.footer {
+  text-align:center;
+}
+.footer__link {
+  color:#34495E;
 }

@@ -20,7 +20,7 @@
 /* 1 - Fonts */
 @font-face {
 	font-family: 'carbon';
-	src: url(../cms/assets/fonts/carbon bl.ttf);
+	src: url(../ecommerce/assets/fonts/carbon bl.ttf);
 }
 @font-face {
   font-family: 'Architects Daughter';
@@ -34,6 +34,9 @@
 	background-color: #1A2530;
   	padding:8px;
 	text-align:center;
+}
+.header__logo {
+	margin:8px;
 }
 .header__logo a {
 	color: rgba(255,175,75,1);
@@ -50,7 +53,17 @@
 	text-decoration:none;
 }
 .header-logo a:hover {
-
+	color: rgba(255,200,75,1);
+	color: -moz-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	color: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(255,146,10,1)));
+	color: -webkit-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	color: -o-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	color: -ms-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	color: linear-gradient(to right, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#524f4b', endColorstr='#ff920a', GradientType=1 );
+}
+img {
+	vertical-align:middle;
 }
 .navbar {
 	box-shadow: 1px 1px 8px #525252;
@@ -62,9 +75,13 @@
 nav li:hover, nav li:active, nav li:focus {
 	background-color:rgba(0,0,0,0.5);
 }
+.rupture_stock {
+	color:red;
+}
 /* 3 - Body & Content */
-body {
-	background-color: #F7F7F7;
+body
+{
+	background-color: #f7f7f7;
 }
 .main {
 	background-color:#EFEFEF;
@@ -148,7 +165,6 @@ body {
 	font-weight:bold;
 	margin-bottom:15px;
 	min-height:200px;
-	max-height:200px;
 	margin-top:15px;
 	padding:20px;
 	text-align:center;
@@ -175,6 +191,51 @@ body {
 	top:0;
 	right:0;
 }
+.add_panier {
+	background-color:green;
+	color: white;
+	border-radius:8px;
+	float:right;
+	padding:8px;
+}
+.add_panier:hover {
+	color:#E27A3F;
+}
+.totals .totals-item {
+  float: right;
+  clear: both;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.totals .totals-item label {
+  float: left;
+  clear: both;
+  width: 79%;
+  text-align: right;
+}
+.totals .totals-item .totals-value {
+  float: right;
+  width: 21%;
+  text-align: right;
+}
+.totals .totals-item-total {
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+}
+
+.checkout {
+  float: right;
+  border: 0;
+  margin-top: 20px;
+  padding: 6px 25px;
+  background-color: #6b6;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 3px;
+}
+
+.checkout:hover {
+  background-color: #494;
+}
 /* 7 - Elements */
 hr {
 	border:1px;
@@ -193,6 +254,16 @@ hr {
 #go-top:hover {
 	opacity:0.7;
 	width:50px;
+}
+table {
+	margin:0 auto;
+}
+tr {
+	width:100%;
+}
+.module_paiement_title {
+	font-weight:bold;
+	text-align:center;
 }
 /* 8 - Forms */
 form {
@@ -220,4 +291,15 @@ form {
 .form__button:hover, .form__button:active, .form__button:focus{
 	background-color:#DF4949;
 	border-radius:10px;
+}
+.list-group {
+	border-radius:20px;
+	margin:5px;
+}
+.list-group-item {
+	background-color: #1A2530;
+	color:white;
+}
+.list-group-item:hover {
+	background-color: #34495E;
 }

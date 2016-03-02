@@ -1,2 +1,21 @@
+Options +FollowSymLinks
 RewriteEngine on
-RewriteRule ^([a-zA-Z0-9\-\_\/]+)$ index.php?p=$1
+RewriteRule ^home$ index.php [L]
+RewriteRule ^about$ index.php?c=page&a=about [L]
+RewriteRule ^shop/list$ index.php?c=article&a=list [L]
+RewriteRule ^contact$ index.php?c=page&a=contact [L]
+RewriteRule ^connect$ index.php?c=page&a=connexion [L]
+RewriteRule ^signin$ index.php?c=page&a=inscription [L]
+RewriteRule ^deconnect$ index.php?c=page&a=deconnexion [L]
+RewriteRule ^user/profil/([0-9]+)$ index.php?c=user&a=profil&id=$1 [L]
+RewriteRule ^user/commande$ index.php?c=user&a=commande [L]
+RewriteRule ^support$ index.php?c=user&a=support [L]
+RewriteRule ^shop/panier$ index.php?c=shop&a=panier [L]
+RewriteRule ^panier/add/([0-9]+)$ index.php?c=panier&a=add&id=$1 [L]
+RewriteRule ^cgv$ index.php?c=article&a=cgv [L]
+RewriteRule ^article/view/([a-zA-Z0-9\-]+)-([0-9]+)$ index.php?c=article&a=view&url=$1&id=$2 [L]
+RewriteRule ^news/view/([0-9]+)-([a-zA-Z0-9\-]+)$ index.php?c=news&a=view&id=$1&url=$2 [L]
+RewriteRule ^article/categorie/([a-zA-Z0-9\-]+)$ index.php?c=article&a=categorie&nom=$1 [L]
+
+
+ErrorDocument 404 /ecommerce/views/pages/404.php

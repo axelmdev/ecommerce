@@ -1,5 +1,4 @@
 <?php 
-
 class DB {
 	private static $_instance = null;
 	public $test = "";
@@ -7,6 +6,7 @@ class DB {
 	private function __construct() {
 		$this->connexionBDD = new PDO("mysql:host=localhost;dbname=ecommerce", "root", "");
 		$this->connexionBDD->exec('SET NAMES utf8');
+		$this->connexionBDD->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 
 	public static function getInstance() {
@@ -23,6 +23,16 @@ class DB {
 	public function get($query) {
 		$reponse = self::$_instance->connexionBDD->query($query);
 		$resultat = $reponse->fetch();
+		return $resultat;
+	}
+	public function getPanierAll($query) {
+		$reponse = self::$_instance->connexionBDD->query($query);
+		$resultat = $reponse->fetchAll(PDO::FETCH_OBJ);
+		return $resultat;
+	}
+	public function getPanier($query) {
+		$reponse = self::$_instance->connexionBDD->query($query);
+		$resultat = $reponse->fetchAll(PDO::FETCH_OBJ);
 		return $resultat;
 	}
 	public function execute($query, $tab) {

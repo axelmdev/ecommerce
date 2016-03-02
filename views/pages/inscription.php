@@ -1,5 +1,7 @@
-<?php $title_page = "Inscription";
-require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/header.php");
+<?php 
+if(empty($_SESSION['id_users'])) {
+$title_page = "Inscription";
+require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header.php");
  ?>
 		<div class="container">
 			<div class="row">
@@ -19,7 +21,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/header.php");
 						<form method="post">
 							<div class="form-group">
 								<label for="pseudo">Pseudo</label>
-								<input type="text" name="username" class="form-control"/>
+								<input type="text" id="pseudo" name="username" class="form-control"/>
 							</div>
 							<div class="form-group">
 								<label for="email">Email</label>
@@ -47,12 +49,16 @@ require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/header.php");
 							</div>
 							<div class="form-group">
 								<label for="code_postal">Code postal</label>
-								<input type="text" name="code_postal" class="form-control"/>
+								<input type="text" name="code_postal" class="form-control" maxlength="5"/>
 							</div>
-							<button type="submit" name="button_inscription" class="form__button">S'inscrire</button>
+							<button type="submit" class="form__button">S'inscrire</button>
 						</form>
 				</div> <!-- .main -->
-			<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/sidebar.php"); ?>
+			<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/sidebar.php"); ?>
 			</div> <!-- .row (principale) -->
 		</div> <!-- .container (principale) -->
-<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/footer.php"); ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/footer.php"); 
+} else {
+	header('Location: /ecommerce/home');
+}
+?>

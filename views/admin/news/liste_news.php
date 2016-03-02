@@ -1,0 +1,40 @@
+<?php 
+if(!empty($_SESSION['id_admin'])) {
+$title_page = "Liste des News";
+require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header_admin.php");
+?>
+		<div class="container">
+			<div class="row">
+			<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/sidebar_admin.php"); ?>
+				<div class="main col-xs-12 col-sm-12 col-md-8">
+					<div class="row">
+						<h3>News - <a href="/ecommerce/admin/news/add"><button type="button" class="btn btn-success">Ajouter une news</button></a></h3>
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<tr>
+									<td><b>Titre</b></td>
+									<td><b>Contenu</b></td>
+									<td><b>Auteur</b></td>
+									<td><b>Url</b></td>
+								</tr>
+							<?php foreach ($listeNews as $news) { ?>
+								<tr>		              				
+					                <td><a href="/ecommerce/admin/news/<?= $news['url']; ?>-<?= $news['id_news']; ?>"><?= $news['title']; ?></a></td>				            
+									<td><?= substr($news['content'], 0, 10); ?>...</td>
+									<td><?= $news['id_admin']; ?></td>
+									<td><?= $news['url']; ?></td>
+									<td><a href="/ecommerce/admin/news/update/<?= $news['id_news']; ?>"><btn class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></btn></a>
+									<a href="/ecommerce/admin/news/delete/<?= $news['id_news']; ?>"><btn class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></btn></a></td>
+								</tr>
+							<?php } ?>	
+							</table>
+						</div>
+					</div>
+				</div> <!-- .main -->
+	</div> <!-- .row (principale) -->
+</div> <!-- .container (principale) -->
+<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/footer_admin.php"); 
+} else {
+	header('Location: /ecommerce/home');
+}
+?>

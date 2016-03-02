@@ -1,6 +1,6 @@
 <?php 
 $title_page = "C.G.V";
-require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/header.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header.php");
  ?>
  <div class="container">
  	<div class="row">
@@ -18,42 +18,41 @@ require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/header.php");
 			</p>
 			
 			<h3>Commandes, délais de livraison</h3>
-			<p>
 				<ol>
 					<li>Les commandes sont fermes et définitives et aucune annulation ou modification ne sera possible sauf acceptation écrite et préalable du Vendeur. Sauf s’il est démontré que l’annulation provient du Vendeur, les acomptes éventuellement versés resteront acquis par le Vendeur à titre de dommages et intérêts.</li>
 					<li>Seules les commandes comportant les informations suivantes seront exécutées : date de la commande, description des produits, quantités, tarif applicable, montant total de la commande, lieu et date (jour et heure) de livraison/d’enlèvement souhaitée, nom et coordonnées du transporteur chargé de l’enlèvement.</li>
-					<li>Les commandes sont exécutables dans un délai minimum de 2 jours ouvrés (samedis, dimanches et jours fériés exclus) après leur réception par le Vendeur. Ce délai est porté à 3 jours ouvrés pour les produits < INDIQUEZ LA NATURE DES PRODUITS >.
+					<li>Les commandes sont exécutables dans un délai minimum de 2 jours ouvrés (samedis, dimanches et jours fériés exclus) après leur réception par le Vendeur. Ce délai est porté à 3 jours ouvrés pour les produits de jeux videos.
 					Ces délais de livraison sont donnés à titre indicatif. Les retards éventuels ne peuvent motiver ni indemnité, ni refus de marchandise, ni annulation de la commande. 
 					Le Vendeur s’engage à informer l’Acheteur de toute indisponibilité du produit, quelle soit temporaire ou durable, cette indisponibilité rendant sans objet tout délai de livraison.
 					Tout non-respect des conditions de livraison par l’Acheteur entraîne le droit pour Le Vendeur de facturer à l’Acheteur le temps d’attente du transporteur.</li>
-					<li>Le Vendeur se réserve la possibilité de fractionner toute commande dans le cas où la quantité commandée en une seule fois, ou en série de commandes successives transmises dans une période de < DELAI > représente plus de < POURCENTAGE > des quantités livrées au cours de l’année civile écoulée.</li>
+					<li>Le Vendeur se réserve la possibilité de fractionner toute commande dans le cas où la quantité commandée en une seule fois, ou en série de commandes successives transmises dans une période de 48h représente plus de 50% des quantités livrées au cours de l’année civile écoulée.</li>
 					<li>Pour être recevable, toute contestation à raison de l’état des marchandises doit avoir fait l’objet de réserves consignées sur le bordereau de livraison, signé par le réceptionnaire et contresigné par le livreur.</li>
 					<li>Le Vendeur se réserve la possibilité de suspendre ses livraisons lors de l’apparition de tout événement de nature à révéler une diminution de la solvabilité apparente de l’Acheteur.</li>
 				</ol>
-			</p>
+			
 			
 			<h3>Logistique</h3>
 			<p>
 				Si l’Acheteur vient charger la marchandise dans les locaux du Vendeur, le transport est effectué aux risques et périls de l’Acheteur sans aucune exception et malgré les termes de l’article sur la Clause de Réserve de Propriété. Dans le cas où la marchandise circule accompagnée de documents douaniers ou fiscaux, si ces documents ne sont pas retournés à bonne date, l’Acheteur remboursera au Vendeur toutes les sommes que le Vendeur pourrait avoir à supporter, y compris les droits et taxes.
-				Pour préparer les commandes faisant l’objet d’un enlèvement, le Vendeur devra avoir reçu une confirmation du rendez-vous < DELAI > jours ouvrés avant la date d’enlèvement. Les transporteurs devront respecter le protocole de sécurité en vigueur sur le site d’enlèvement.
+				Pour préparer les commandes faisant l’objet d’un enlèvement, le Vendeur devra avoir reçu une confirmation du rendez-vous 5 jours ouvrés avant la date d’enlèvement. Les transporteurs devront respecter le protocole de sécurité en vigueur sur le site d’enlèvement.
 				Conséquences du non-respect des conditions d’enlèvement par l’Acheteur :
-				- facturation d’une pénalité de < MONTANT > par chargement pour un retard supérieur à < DELAI >,
+				- facturation d’une pénalité de 15 € par chargement pour un retard supérieur à 7 jours,
 				- refus des chargements pour les enlèvements sans rendez-vous ou ne correspondant pas à la date prévue dans la commande.
 			</p>
 			
 			<h3>Modalités financières</h3>
-			<p>
+			
 				<ol>
-					<li>Les tarifs s’entendent pour paiement < A PRECISER >.</li>
-					<li>Ils peuvent être modifiés à tout moment moyennant le respect d’un préavis de < DELAI > sauf modification de la fiscalité en vigueur.
+					<li>Les tarifs s’entendent pour paiement Paypal.</li>
+					<li>Ils peuvent être modifiés à tout moment moyennant le respect d’un préavis de 48H sauf modification de la fiscalité en vigueur.
 					Aucun escompte n’est accordé pour paiement anticipé sauf convention expresse contraire.
 					Les tarifs comportent des conditions spécifiques selon la zone géographique de livraison. 
-					Toute commande livrable en une seule fois et en un même lieu doit comporter un minimum de < QUANTITE MINIMALE >.</li>
+					Toute commande livrable en une seule fois et en un même lieu doit comporter un minimum de 20 jeux videos.</li>
 					<li>Tous les titres de paiement (billets à ordre, L.C.R., chèques, etc.) doivent parvenir au Vendeur avant la date d’échéance indiquée sur la facture.</li>
 					<li>Conséquences de tout non-paiement total ou partiel, à la date de paiement indiquée sur la facture :
 						<ul>
 							<li>règlement immédiat de toutes les sommes restant dues quel que soit le mode de règlement prévu et l’échéance.</li>
-							<li>versement à titre de clause pénale d’une indemnité égale à < MONTANT > % des sommes dues et non payées y compris les frais judiciaires et extrajudiciaires éventuels, notamment les pénalités et frais bancaires le cas échéant. La présente clause pénale s’appliquera sans que Le Vendeur ait à justifier de l’importance et de la nature de son préjudice.</li>
+							<li>versement à titre de clause pénale d’une indemnité égale à 100 % des sommes dues et non payées y compris les frais judiciaires et extrajudiciaires éventuels, notamment les pénalités et frais bancaires le cas échéant. La présente clause pénale s’appliquera sans que Le Vendeur ait à justifier de l’importance et de la nature de son préjudice.</li>
 							<li>compensation, à due concurrence du principal augmenté des intérêts, frais et accessoires, avec tous les avoirs, crédits, remboursements, ristournes, rabais ou remises et de façon plus générale toutes sommes que le Vendeur pourrait devoir à l’Acheteur à quelque titre que ce soit.</li>
 							<li>suspension de toute livraison jusqu’à complet paiement.</li>
 							<li>résiliation de tout marché ou toute commande en cours après mise en demeure de payer effectuée, par lettre R.A.R., demeurée sans effet.</li>
@@ -65,7 +64,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/header.php");
 					<li>La facture est établie au Tarif applicable à la zone géographique de livraison, en vigueur à la date de livraison. La facture est établie en fonction de la fiscalité en vigueur et sera modifiée automatiquement en cas de modification de celle-ci.</li>			
 					<li>Toute reprise acceptée par Le Vendeur ou indisponibilité du produit commandé communiquée par Le Vendeur entraînera la constitution d’un avoir au profit de l’Acheteur, cet avoir n’étant en aucun cas une acceptation par le Vendeur de quelque pénalité ou de quelque dommages et intérêts que ce soit.</li>
 				</ol>
-			</p>
+			
 			
 			<h3>Clause de réserve de propriété</h3>
 			<p>
@@ -88,8 +87,8 @@ require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/header.php");
 			
 			<h3>Règlement des litiges</h3>
 			<p>
-				Toute réclamation de l’Acheteur sur des sommes que le Vendeur pourrait éventuellement lui devoir à quelque titre que ce soit doit être notifiée par LRAR au plus tard < NOMBRE > mois après l’année civile au titre de laquelle la somme est réclamée. A défaut, la réclamation n’est pas recevable.
-				En cas de différend dans l’interprétation et/ou l’exécution des présentes, il est fait attribution de juridiction au Tribunal de Commerce de < VILLE > le droit applicable étant le droit français.
+				Toute réclamation de l’Acheteur sur des sommes que le Vendeur pourrait éventuellement lui devoir à quelque titre que ce soit doit être notifiée par LRAR au plus tard 5 mois après l’année civile au titre de laquelle la somme est réclamée. A défaut, la réclamation n’est pas recevable.
+				En cas de différend dans l’interprétation et/ou l’exécution des présentes, il est fait attribution de juridiction au Tribunal de Commerce de Rennes le droit applicable étant le droit français.
 			</p>
 			
 			<h3>Propriété industrielle et commerciale</h3>
@@ -100,7 +99,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/header.php");
 				Lors de la mise en ligne par l’Acheteur des produits du Vendeur, l’Acheteur s’engage à n’utiliser que des photos et logotypes transmis par le Vendeur, dont l’accord préalable et écrit est obligatoire.
 	 		</p>
 	 	</div>
- 		<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/sidebar.php"); ?>
+ 		<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/sidebar.php"); ?>
  	</div> <!-- .row (principale) -->
 </div> <!-- .container (principale) -->
-<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/footer.php"); ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/footer.php"); ?>
