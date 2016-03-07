@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+  <title>Ecommerce</title>
+  <parser>
+    <target>D:\wamp\www\ecommerce\docs\</target>
+  </parser>
+  <transformer>
+    <target>D:\wamp\www\ecommerce\docs\</target>
+  </transformer>
+  <files>
+    <directory>D:\wamp\www\ecommerce\</directory>
+    <ignore>D:\wamp\www\ecommerce\vendor\*</ignore>
+    <ignore>D:\wamp\www\ecommerce\views\includes\*</ignore>
+    <ignore>D:\wamp\www\ecommerce\phpinfo.php</ignore>
+    <ignore>D:\wamp\www\ecommerce\views\pages\404.php</ignore>
+  </files>
+</phpdoc>

@@ -1,8 +1,21 @@
 <?php
+/**
+* Page
+*
+* Controller News
+* 
+* @package          Ecommerce
+* @subpackage       Controllers
+* @category          News
+* @author              Axel Mainguy
+*/
 require_once($_SERVER['DOCUMENT_ROOT']."ecommerce/models/news.php");
+/**
+ * Class Controller_News
+ */
 Class Controller_News {
 	/**
-	 * - Fonction permettant de lister des news -
+	 * Fonction permettant de lister des news
 	 */
 	public function listNews() {
 		$news = new Model_News();
@@ -11,7 +24,8 @@ Class Controller_News {
 		require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/home.php");
 	}
 	/**
-	 * - Fonction permettant d'avoir la view d'une news -
+	 * Fonction permettant d'avoir la view d'une news
+	 * @param  Int $id_news Id de la news
 	 */
 	public function viewNews($id_news) {
 		$news = new Model_News();
@@ -19,6 +33,9 @@ Class Controller_News {
 		$newsAdminDetails = $news->adminNewsView($id_news);
 		require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/news/view.php");
 	}
+	/**
+	 * Fonction permettant d'ajouter une news
+	 */
 	public function addNews() {
 		if (!empty($_POST['title']) AND !empty($_POST['content']) AND !empty($_POST['url']) AND !empty($_POST['id_admin'])) {
 			$title = $_POST['title'];
@@ -31,11 +48,19 @@ Class Controller_News {
 		}
 		require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/admin/news/create_news.php");
 	}
+	/**
+	 * Fonction permettant de supprimer une news
+	 * @param  Int $id_news Id de la news
+	 */
 	public function deleteNews($id_news) {
 		$news = new Model_News();
 		$deleteNews = $news->deleteNews($id_news);
 		header('Location: /ecommerce/admin/news/list');
 	}
+	/**
+	 * Fonction permettant de mettre a jour une news
+	 * @param  Int $id_news Id de la news
+	 */
 	public function updateNews($id_news) {
 		$news = new Model_News();
 		if(!empty($_POST)) {

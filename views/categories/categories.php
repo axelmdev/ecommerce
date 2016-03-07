@@ -1,4 +1,11 @@
-<?php 
+<?php
+/**
+ *  Page Categorie
+ */
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "Categories : ".$categoriesViewOneDetails[0]['nom_categories'];
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header.php"); 
 ?>

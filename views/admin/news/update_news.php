@@ -1,8 +1,15 @@
 <?php
+/**
+ * Page Update News
+ */
 if (!empty($_SESSION['id_admin'])) {
 if ($newsDetails['id_news'] != $_GET['id']) {
 	header('Location: /ecommerce/admin/news/update/'.$newsDetails['id_news'].'');
 }
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "Modifier une news";
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header_admin.php"); ?>
 

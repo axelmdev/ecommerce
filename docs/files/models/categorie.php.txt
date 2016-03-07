@@ -1,0 +1,145 @@
+<?php
+/**
+* Page
+*
+* Model Category
+* 
+* @package          Ecommerce
+* @subpackage       Models
+* @category          Category
+* @author              Axel Mainguy
+*/
+require_once($_SERVER['DOCUMENT_ROOT']."ecommerce/library/db.php");
+/**
+ * Class Model_Categorie
+ */
+class Model_Categorie {
+	/**
+	 * DB
+	 * @var instance
+	 */
+	private $db;
+	/**
+	 * Constructeur
+	 */
+	public function __construct() {
+		$this->db = DB::getInstance();
+	}
+	/**
+	 * Fonction permettant de lister les catégories
+	 * @return array Récupère toutes les catégories
+	 */
+	public function listCategories() {
+		$query = "SELECT * FROM categories;";
+		$resultat = $this->db->getAll($query);
+		return $resultat;
+	}
+	/**
+	 * Fonction permettant de lister les categories dans le menu
+	 * @return array Récupère toutes les catégories
+	 */
+	public function listCategoriesHome() {
+		$query = "SELECT nom_categories, id_categories FROM categories;";
+		$resultat = $this->db->getAll($query);
+		return $resultat;
+	}
+	/**
+	 * Fonction permettant de selectionner tout d'une categories avec son id
+	 * @param  Int $id_categories Id de la catégorie
+	 * @return array  Renvoie les caractéristique de la catégorie
+	 */
+	public function loadCategorie($id_categories) {
+		$query = "SELECT * FROM categories WHERE id_categories=".$id_categories;
+		$resultat = $this->db->get($query);
+		return $resultat;
+	}
+	/**
+	 * Fonction permettant de récuperer l'id et le nom de la catégorie avec l'id de l'article
+	 * @param  Int $id_articles Id de l'article
+	 * @return array  Recupère l'id et le nom de la catégorie avec l'id de l'article
+	 */
+	public function categorieOneNews($id_articles) {
+		$query= "SELECT categories.id_categories, categories.nom_categories FROM articles INNER JOIN asso_art_categ ON articles.id_articles = asso_art_categ.id_articles INNER JOIN categories ON asso_art_categ.id_categories = categories.id_categories WHERE articles.id_articles = ".$id_articles;
+		$resultat = $this->db->getAll($query);
+		return $resultat;
+	}
+	/**
+	 * Fonction permettant de compter les articles dans une catégorie
+	 * @param  Int $id_categories Id de la catégorie
+	 * @return array Récupére le nombre d'articles dans une catégorie     
+	 */
+	public function countArticlesInCategories($id_categories) {
+		$query = "SELECT COUNT(articles.id_articles) AS nbr, categories.id_categories, categories.nom_categories FROM articles INNER JOIN asso_art_categ ON articles.id_articles = asso_art_categ.id_articles INNER JOIN categories ON asso_art_categ.id_categories = categories.id_categories WHERE categories.id_categories = ".$id_categories;
+		$resultat = $this->db->getAll($query);
+		return $resultat;
+	}
+	/**
+	 * Fonction permettant de savoir quelles articles dans telles categories
+	 * @param  Varchar $nom_categories Nom de la catégorie
+	 * @return array Renvoie tous les articles d'une catégorie
+	 */
+	public function articlesInCategories($nom_categories) {
+		$query = "SELECT articles.nom, articles.description, articles.prix, articles.quantite, articles.reference, articles.id_admin, categories.nom_categories, categories.description as content_categories FROM articles INNER JOIN asso_art_categ ON articles.id_articles = asso_art_categ.id_articles INNER JOIN categories ON asso_art_categ.id_categories = categories.id_categories WHERE categories.nom_categories = '" .$nom_categories. "' ;";
+		$resultat = $this->db->getAll($query);
+		return $resultat;
+	}
+	/**
+	 * Fonction permettant de creer des categories
+	 * @param  Varchar $nom         Nom de la catégorie
+	 * @param  Text $description Description de la catégorie
+	 */
+	public function createCategorie($nom, $description) {
+		if(empty($errors)) {
+			$query = "INSERT INTO categories (nom_categories,description) VALUES (:nom, :description)";
+			$tab = array(
+				'nom' => $nom,
+				'description' => $description,
+			);
+			$this->db->execute($query, $tab);
+		}		
+	}
+	/**
+	 * Fonction permettant de supprimer des catégories
+	 * @param  Int $id_categories Id de la catégorie
+	 */
+	public function deleteCategories($id_categories) {
+		$query = 'DELETE FROM categories WHERE id_categories = :id';
+		$tab = array(
+			'id' => $id_categories
+		);
+		$this->db->execute($query, $tab);
+	}
+	/**
+	 * Fonction permettant d'associer articles avec categories
+	 * @param  Int $id_articles   Id de l'articles
+	 * @param  Int $id_categories Id de la categorie
+	 */
+	public function asso_art_categ($id_articles, $id_categories) {
+		$requete = "SELECT * FROM asso_art_categ WHERE id_articles = ".$id_articles." AND id_categories = ".$id_categories;
+		$exist = $this->db->getPanier($requete);
+		if (!empty($exist)) {
+			return false;
+		} else {
+			$query = "INSERT INTO asso_art_categ (id_articles,id_categories) VALUES (:id_articles,:id_categories)";
+			$tab = array(
+				'id_articles' => $id_articles,
+				'id_categories' => $id_categories
+			);
+			$this->db->execute($query, $tab);
+		}
+	}
+	/**
+	 * Fonction permettant de supprimer des association articles avec categories
+	 * @param  Int $id_categories Id de la catégorie
+	 * @param  Int $id_articles   Id de l'article
+	 */
+	public function deleteAsso_Art_Categ($id_categories, $id_articles) {
+		$query = "DELETE FROM asso_art_categ WHERE id_categories = :id_categories AND id_articles = :id_articles";
+		$tab = array(
+			'id_categories' => $id_categories,
+			'id_articles' => $id_articles
+		);
+		$this->db->execute($query, $tab);
+	}
+}
+?>

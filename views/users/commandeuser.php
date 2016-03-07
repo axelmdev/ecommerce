@@ -1,4 +1,11 @@
-<?php 
+<?php
+/**
+ * Page Commande User
+ */
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "Commandes";
 require_once($_SERVER['DOCUMENT_ROOT']."ecommerce/views/includes/header.php"); 
 ?>

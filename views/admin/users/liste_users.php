@@ -1,5 +1,12 @@
 <?php
+/**
+ * Page Listes des users
+ */
 if(!empty($_SESSION['id_admin'])) {
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "Liste d'utilisateurs";
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header_admin.php");
 ?>

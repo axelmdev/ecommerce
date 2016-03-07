@@ -1,16 +1,30 @@
-<?php 
+<?php
+/**
+* Page
+*
+* Controller Category
+* 
+* @package          Ecommerce
+* @subpackage       Controllers
+* @category          Category
+* @author              Axel Mainguy
+*/
 require_once($_SERVER['DOCUMENT_ROOT']."ecommerce/models/categorie.php");
+/**
+ * Class Controller_Categorie
+ */
 class Controller_Categorie {
 	/**
-	 * - Fonction permettant de lister les categories dans le panel admin -
+	 * Fonction permettant de lister les categories dans le panel admin
 	 */
 	public function listeCategories() {
 		$categories = new Model_Categorie();
 		$listeCategories = $categories->listCategories();
 		require_once($_SERVER['DOCUMENT_ROOT']."ecommerce/views/admin/categories/liste_categories.php");
 	}
-	/** 
-	 * - Fonction permettant de lister les categories ( Menu, page creation article, ... ) -
+	/**
+	 * Fonction permettant de lister les categories(Menu, page creation article,...)
+	 * @return array Renvoie la liste des categories dans le menu
 	 */
 	public function listeCategoriesHome() {
 		$categories = new Model_Categorie();
@@ -18,7 +32,8 @@ class Controller_Categorie {
 		return $listeCategories;
 	}
 	/**
-	 * - Fonction permettant d'avoir la view d'un categorie -
+	 * Fonction permettant d'avoir la view d'un categorie
+	 * @param  Int $id_articles Id de la catégorie
 	 */
 	public function viewCategorie($id_articles) {
 		$categories = new Model_Categorie();
@@ -26,7 +41,8 @@ class Controller_Categorie {
 		require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/admin/categories/view_categories.php");
 	}
 	/**
-	 * - Fonction permettant de voir les articles dans une categorie 
+	 * Fonction permettant de voir les articles dans une categorie 
+	 * @param  Varchar $nom_categories Nom de la categorie
 	 */
 	public function viewCategoriesShop($nom_categories) {
 		$categories = new Model_Categorie();
@@ -39,7 +55,7 @@ class Controller_Categorie {
 		}
 	}
 	/**
-	 * - Fonction permettant de creer une categorie 
+	 * Fonction permettant de creer une categorie 
 	 */
 	public function createCategorie() {
 		if (!empty($_POST['nom']) && !empty($_POST['description'])) {
@@ -52,13 +68,19 @@ class Controller_Categorie {
 		require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/admin/categories/create_categories.php");
 	}
 	/**
-	 * - Fonction permettant de supprimer une categorie 
+	 * Fonction permettant de supprimer une categorie
+	 * @param  Int $id_categorie Id de la categorie
 	 */
 	public function deleteCategories($id_categorie) {
 		$categories = new Model_Categorie();
 		$deleteCategories = $categories->deleteCategories($id_categorie);
 		header('Location: /ecommerce/admin/categories/list');
 	}
+	/**
+	 * Fonction permettant de supprimer les associations articles categories
+	 * @param  Int $id_categories Id de la categorie
+	 * @param  Int $id_articles   Id de l'article
+	 */
 	public function deleteAsso_Art_Categ($id_categories, $id_articles) {
 		$categories = new Model_Categorie();
 		$deleteAsso_Art_Categ = $categories->deleteAsso_Art_Categ($id_categories, $id_articles);

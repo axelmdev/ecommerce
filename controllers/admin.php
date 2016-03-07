@@ -1,5 +1,18 @@
-<?php 
+<?php
+/**
+* Page
+*
+* Controller Admin
+* 
+* @package          Ecommerce
+* @subpackage       Controllers
+* @category          Admin
+* @author              Axel Mainguy
+*/
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/models/admin.php");
+/**
+ * Class Controller_Admin
+ */
 class Controller_Admin {
 	/**
 	 * Fonction permettant de se connecter au panel admin

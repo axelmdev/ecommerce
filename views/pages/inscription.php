@@ -1,5 +1,12 @@
-<?php 
+<?php
+/**
+ * Page Inscription
+ */
 if(empty($_SESSION['id_users'])) {
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "Inscription";
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header.php");
  ?>

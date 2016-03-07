@@ -1,4 +1,11 @@
 <?php
+/**
+ * Page Accueil
+ */
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "Accueil";
 require_once ($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header.php");
 ?>

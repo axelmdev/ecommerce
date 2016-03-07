@@ -1,5 +1,12 @@
-<?php 
+<?php
+/**
+ * Page Liste des news
+ */
 if(!empty($_SESSION['id_admin'])) {
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "Liste des News";
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header_admin.php");
 ?>

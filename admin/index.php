@@ -1,22 +1,39 @@
 <?php
+/**
+* Page
+*
+* Routeur Admin Index
+* 
+* @package          Ecommerce
+* @subpackage       Admin
+* @category          Routeur Index
+* @author              Axel Mainguy
+*/
+/**
+ * Routeur Admin Index
+ */
 session_start();
 $controller = "";
 $action = "";
+
 if(!empty($_GET['c']) && !empty($_GET['a'])) {
 	$controller = $_GET['c'];
 	$action = $_GET['a'];
 }
+
 if($controller == "article" && $action == "add") {
 	require_once ($_SERVER['DOCUMENT_ROOT']."/ecommerce/controllers/article.php");
 	$controller_admin_addArticle = new Controller_Article();
 	$controller_admin_addArticle->addArticle();
 	// Page Ajout d'article
-} elseif($controller == "article" && $action == "list") {
+} 
+elseif($controller == "article" && $action == "list") {
 	require_once ($_SERVER['DOCUMENT_ROOT']."/ecommerce/controllers/admin.php");
 	$controller_admin_listArticle = new Controller_Admin();
 	$controller_admin_listArticle->listeArticles();
 	// Page Liste d'article
-} elseif($controller == "article" && $action == "delete") {
+} 
+elseif($controller == "article" && $action == "delete") {
 	if(empty($_GET['id'])) {
 		echo "<p>Il manque l'identifiant du produit pour pouvoir supprimer l'article</p>";
 	} else {
@@ -26,7 +43,8 @@ if($controller == "article" && $action == "add") {
 		$controller_admin_deleteArticle->deleteArticle($id_articles);
 	}
 	// Page de suppression d'article
-} elseif($controller == "article" && $action == "update") {
+} 
+elseif($controller == "article" && $action == "update") {
 	if(empty($_GET['id'])) {
 		echo "<p>Il manque l'identifiant du produit</p>";
 	} else {
@@ -35,7 +53,6 @@ if($controller == "article" && $action == "add") {
 		$controller_admin_updateArticle = new Controller_Article();
 		$controller_admin_updateArticle->updateArticle($id_articles);
 	}
-
 	// Page Modifier un article
 }
 elseif ($controller == "users" && $action == "add") {
@@ -66,7 +83,8 @@ elseif ($controller == "news" && $action == "add") {
 	$controller_admin_addNews = new Controller_News();
 	$controller_admin_addNews->addNews();
 	// Page Ajout d'Actualité
-} elseif ($controller == "news" && $action == "list") {
+} 
+elseif ($controller == "news" && $action == "list") {
 	require_once ($_SERVER['DOCUMENT_ROOT']."/ecommerce/controllers/admin.php");
 	$controller_news = new Controller_Admin();
 	$controller_news->listeNews();
@@ -132,16 +150,19 @@ elseif ($controller == "articlecateg" && $action == "delete") {
 elseif ($controller == "admin" && $action == "home") {
 	require_once ($_SERVER['DOCUMENT_ROOT']."/ecommerce/controllers/admin.php");
 	$controller_admin = new Controller_Admin();
-	$controller_admin->dashboard();	
-} // Page Tableau de bord
+	$controller_admin->dashboard();
+	// Page Tableau de bord
+} 
 elseif ($controller == "admin" && $action == "deconnexion") {
 	require_once ($_SERVER['DOCUMENT_ROOT']."/ecommerce/controllers/admin.php");
 	$controller_deconnectadmin = new Controller_Admin();
 	$controller_deconnectadmin->deconnectAdmin();
-} // Page Deconnexion
+	// Page Deconnexion
+} 
 elseif ($controller == "" && $action == "") {
 	require_once ($_SERVER['DOCUMENT_ROOT']."/ecommerce/controllers/admin.php");
 	$controller_admin = new Controller_Admin();
 	$controller_admin->connectAdmin();
-} // Page de Connexion Admin
+	// Page de Connexion Admin
+} 
 ?>

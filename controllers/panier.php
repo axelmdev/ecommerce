@@ -1,8 +1,22 @@
 <?php 
+/**
+* Page
+*
+* Controller Panier
+* 
+* @package          Ecommerce
+* @subpackage       Controllers
+* @category          Panier
+* @author              Axel Mainguy
+*/
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/models/panier.php");
-
+/**
+ * Class Controler_Panier
+ */
 Class Controller_Panier {
-
+	/**
+	 * Constructeur
+	 */
 	public function __construct() {
 		if(!isset($_SESSION['panier'])) {
 			$_SESSION['panier'] = array();
@@ -15,6 +29,9 @@ Class Controller_Panier {
 			$this->del($id_articles);
 		}
 	}
+	/**
+	 * Fonction permettant de recalculer les quantités
+	 */
 	public function recalc() {
 		foreach ($_SESSION['panier'] as $id_articles => $quantite) {
 			if(isset($_SESSION['panier'][$id_articles])) {
@@ -22,9 +39,15 @@ Class Controller_Panier {
 			}
 		}
 	}
+	/**
+	 * Fonction permettant de compter le nombre de produits
+	 */
 	public function count() {
 		return array_sum($_SESSION['panier']);
 	}
+	/**
+	 * Fonction permettant de faire le total du panier
+	 */
 	public function total() {
 		$total = 0;
 	    $ids = array_keys($_SESSION['panier']);
@@ -39,7 +62,10 @@ Class Controller_Panier {
 		}
 		return $total;
 	}
-
+	/**
+	 * Fonction permettant d'ajouter au panier
+	 * @param Int $id_articles Id article
+	 */
 	public function addPanier($id_articles) {
 		$json = array('error' => true);
 		$id_articles = $_GET['id'];
@@ -60,7 +86,10 @@ Class Controller_Panier {
 		}
 		echo json_encode($json);
 	}
-
+	/**
+	 * Fonction permettant d'incrementer les ids
+	 * @param Int $id_articles Id articles
+	 */
 	public function add($id_articles) {
 		$id_articles = $_GET['id'];
 		if (isset($_SESSION['panier'][$id_articles])) {
@@ -71,10 +100,16 @@ Class Controller_Panier {
 		header('Location: Javascript:history.back()');
 
 	}
+	/**
+	 * Fonction permettant de supprimer une id dans le panier
+	 * @param  Int $id_articles Id article
+	 */
 	public function del($id_articles) {
 		unset($_SESSION['panier'][$id_articles]);
 	}
-
+	/**
+	 * Fonction permettant de faire la view du panier
+	 */
 	public function viewPanier() {
 		serialize($_SESSION['panier']);
 		$ids = array_keys($_SESSION['panier']);

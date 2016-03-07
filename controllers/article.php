@@ -1,9 +1,22 @@
-<?php 
+<?php
+/**
+* Page
+*
+* Controller Article
+* 
+* @package          Ecommerce
+* @subpackage       Controllers
+* @category          Article
+* @author              Axel Mainguy
+*/
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/models/article.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/models/categorie.php");
+/**
+ * Class Controller_Article
+ */
 class Controller_Article {
 	/**
-	 * - Fonction permettant de lister des articles -
+	 * Fonction permettant de lister des articles
 	 */
 	public function listArticle() {
 		$articles = new Model_Article();
@@ -11,7 +24,8 @@ class Controller_Article {
 		require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/articles/list.php");
 	}
 	/**
-	 * - Fonction permettant d'avoir la view d'un article -
+	 * Fonction permettant d'avoir la view d'un article
+	 * @param  Int $id_articles Id de l'article
 	 */
 	public function viewArticle($id_articles) {
 		$articles = new Model_Article();
@@ -22,7 +36,7 @@ class Controller_Article {
 		require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/articles/view.php");
 	}
 	/**
-	 * - Fonction permettant de créer des articles -
+	 * Fonction permettant de créer des articles
 	 */
 	public function addArticle() {
 		if (!empty($_POST['title']) AND !empty($_POST['description']) AND !empty($_POST['url']) AND !empty($_POST['prix']) AND !empty($_POST['quantite']) AND !empty($_POST['id_admin'])) {
@@ -40,7 +54,8 @@ class Controller_Article {
 		require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/admin/articles/create_article.php");
 	}
 	/**
-	 * - Fonction permettant de modifier des articles -
+	 * Fonction permettant de modifier des articles
+	 * @param  Int $id_articles Id de l'article
 	 */
 	public function updateArticle($id_articles) {
 		$articles = new Model_Article();
@@ -66,7 +81,8 @@ class Controller_Article {
 		require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/admin/articles/update_article.php");
 	}
 	/**
-	 * - Fonction permettant de supprimer des articles -
+	 * Fonction permettant de supprimer des articles
+	 * @param  Int $id_articles Id de l'article
 	 */
 	public function deleteArticle($id_articles) {
 		$articles = new Model_Article();

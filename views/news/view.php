@@ -1,7 +1,14 @@
-<?php 
+<?php
+/**
+ * Page View News
+ */
 if ($newsDetails['url'] != $_GET['url'] AND $newsDetails['id_news'] != $_GET['id']) {
 	header('Location: /ecommerce/news/view/'.$newsDetails['id_news'].'-'.$newsDetails['url'].'');
 }
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "News - ".$newsDetails['url'];
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header.php"); 
 ?>

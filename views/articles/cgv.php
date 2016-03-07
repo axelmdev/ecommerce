@@ -1,4 +1,11 @@
-<?php 
+<?php
+/**
+ * Page CGV
+ */
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "C.G.V";
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header.php");
  ?>

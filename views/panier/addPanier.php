@@ -1,4 +1,14 @@
 	<?php 
+	/**
+* Page
+*
+* SubPage Panier
+* 
+* @package          Ecommerce
+* @subpackage       Views/Panier
+* @category          Panier
+* @author              Axel Mainguy
+*/
 	require($_SERVER['DOCUMENT_ROOT']."ecommerce/controllers/panier.php");
 	$panier = new Controller_Panier();
 	$json = array('error' => true);

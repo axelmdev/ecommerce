@@ -1,5 +1,12 @@
 <?php
+/**
+ * Page Creation Article
+ */
 if(!empty($_SESSION['id_admin'])) {
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "Créer un article";
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header_admin.php"); ?>
 

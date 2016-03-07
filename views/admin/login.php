@@ -1,4 +1,8 @@
-<?php if(empty($_SESSION['id_admin'])) { ?>
+<?php 
+/**
+ * Page Login Admin
+ */
+if(empty($_SESSION['id_admin'])) { ?>
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>

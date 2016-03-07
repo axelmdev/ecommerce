@@ -1,8 +1,15 @@
 <?php
+/**
+ * Page Update Article
+ */
 if (!empty($_SESSION['id_admin'])) {
 if ($articleDetails['url'] != $_GET['url'] AND $articleDetails['id_articles'] != $_GET['id']) {
 	header('Location: /ecommerce/admin/article/update/'.$articleDetails['url'].'-'.$articleDetails['id_articles'].'');
 }
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "Modifier un article";
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header_admin.php"); ?>
 

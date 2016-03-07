@@ -1,4 +1,17 @@
 <?php
+/**
+* Page
+*
+* Controller Admin
+* 
+* @package          Ecommerce
+* @subpackage       ./
+* @category          Routeur Index
+* @author              Axel Mainguy
+*/
+/**
+ * Routeur Index Public
+ */
 session_start();
 $controller = "";
 $action = "";

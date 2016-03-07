@@ -1,5 +1,12 @@
 <?php
+/**
+ * Page Create Categorie
+ */
 if(!empty($_SESSION['id_admin'])) {
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "Créer une categorie";
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header_admin.php"); ?>
 

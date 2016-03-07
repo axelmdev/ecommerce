@@ -1,7 +1,14 @@
-<?php 
+<?php
+/**
+ * Page View Articles
+ */
 if ($articleDetails['url'] != $_GET['url'] AND $articleDetails['id_articles'] != $_GET['id']) {
 	header('Location: /ecommerce/article/view/'.$articleDetails['url'].'-'.$articleDetails['id_articles'].'');
 }
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "View Article";
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header.php"); 
 ?>

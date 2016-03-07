@@ -1,6 +1,18 @@
-<?php 
+<?php
+/**
+* Page
+*
+* Controller Users
+* 
+* @package          Ecommerce
+* @subpackage       Controllers
+* @category          Users
+* @author              Axel Mainguy
+*/ 
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/models/users.php");
-
+/**
+ * Class Controller_Users
+ */
 class Controller_Users {
 	/**
 	 * Fonction permettant de s'inscrire au site
@@ -71,6 +83,7 @@ class Controller_Users {
 	}
 	/**
 	 * Fonction permettant de supprimer le compte d'un membre
+	 * @param  Int $id_users Id de l'user
 	 */
 	public function deleteUser($id_users) {
 		$users = new Model_Users();
@@ -87,6 +100,7 @@ class Controller_Users {
 	}
 	/**
 	 * Fonction du profil du membre
+	 * @param  Int $id_users Id de l'user
 	 */
 	public function profiluser($id_users) {
 		$users = new Model_Users();
@@ -111,6 +125,9 @@ class Controller_Users {
 		$commandeUser = $users->commandeUsers($id_users);
 		require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/users/commandeuser.php");
 	}
+	/**
+	 * Fonction permettant d'ajouter un utilisateur
+	 */
 	public function addUser() {
 		if (!empty($_POST['username']) AND !empty($_POST['password']) AND !empty($_POST['email']) AND !empty($_POST['nom']) AND !empty($_POST['prenom']) AND !empty($_POST['adresse']) AND !empty($_POST['code_postal'])) {
 			$errors = array();

@@ -1,0 +1,33 @@
+	<?php 
+	/**
+* Page
+*
+* SubPage Panier
+* 
+* @package          Ecommerce
+* @subpackage       Views/Panier
+* @category          Panier
+* @author              Axel Mainguy
+*/
+	require($_SERVER['DOCUMENT_ROOT']."ecommerce/controllers/panier.php");
+	$panier = new Controller_Panier();
+	$json = array('error' => true);
+		$id_articles = $_GET['id'];
+		if (isset($id_articles)) {
+			require_once($_SERVER['DOCUMENT_ROOT']."ecommerce/models/panier.php");
+			$products_model = new Model_Panier();
+			$products = $products_model->addPanier($id_articles);
+			if(empty($products)) {
+				$json['message'] = "Ce produit n'existe pas";
+			}
+			$panier->add($products[0][$id_articles]);
+			$json['error'] = false;
+			
+			$json['total'] = number_format($panier->total(),2,',',' ');;
+			$json['count'] = $this->count();
+			$json['message'] = "Le produit a bien été ajouté";
+		} else {
+			$json['message'] = "Vous n'avez pas sélectionné de produit a ajouter";
+		}
+		echo json_encode($json);
+		?>

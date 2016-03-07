@@ -1,5 +1,12 @@
-<?php 
+<?php
+/**
+ * Page Accueil Admin
+ */
 if(!empty($_SESSION['id_admin'])) {
+/**
+ * Titre de la page
+ * @var string
+ */
 $title_page = "Tableau de bord";
 require_once($_SERVER['DOCUMENT_ROOT']."/ecommerce/views/includes/header_admin.php"); 
 ?>
